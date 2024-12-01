@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <link rel ="stylesheet" href="styles.css">
+    <link rel = "stylesheet" href="script.js>"
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Healthcare Website</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Digital Doctor</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Welcome to Our Healthcare Clinic</h1>
+            <p>Your health is our priority. Fill out the form below to provide us with your health details.</p>
+        </div>
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <h2>Enter Your Health Details</h2>
+        <form id="health-form" action="#" method="post">
+            <div class="form-group">
+                <label for="symptoms"><i class="fas fa-notes-medical"></i> Current Symptoms:</label>
+                <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="genetic-issues"><i class="fas fa-dna"></i> Any Genetic Health Issue:</label>
+                <textarea id="genetic-issues" name="genetic-issues" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medical-history"><i class="fas fa-file-medical-alt"></i> Medical History:</label>
+                <textarea id="medical-history" name="medical-history" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medicines"><i class="fas fa-pills"></i> Any Medicines Ongoing:</label>
+                <textarea id="medicines" name="medicines" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Details" class="submit-btn">
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Healthcare Clinic. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- AI Assistant Chatbox -->
+<div class="chatbox-container">
+    <div class="chatbox">
+        <div class="chatbox-header">
+            <div class="chatbox-title">you Assistant</div>
+            <button class="chatbox-close" onclick="toggleChatbox()">×</button>
+        </div>
+        <div class="chatbox-content">
+            <div class="chat-messages" id="chat-messages">
+                <div class="assistant-message">Hello! How can I assist you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+    <button class="open-chatbox-btn" onclick="toggleChatbox()">Open Assistant</button>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

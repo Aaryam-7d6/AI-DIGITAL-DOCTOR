@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    /* Resetting default styles */
+    body, h1, h2, h3, p, ul, ol, li, form, fieldset, input, textarea, button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        box-sizing: border-box;
+    }
+
+    /* Global styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Header styles */
+    header {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* Navigation styles */
+    nav {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: #444;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #fff;
+    }
+
+    /* Main content styles */
+    main {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Form styles */
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="number"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #4CAF50;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    .form-group::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .form-group .half-width {
+        width: calc(50% - 10px);
+        float: left;
+        margin-right: 20px;
+    }
+
+    .form-group .half-width:last-child {
+        margin-right: 0;
+    }
+
+    .form-group .full-width {
+        width: 100%;
+    }
+
+    .form-group .submit-btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.2rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-group .submit-btn:hover {
+        background-color: #45a049;
+    }
+
+    /* Footer styles */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+    }
+
+    /* Creative elements */
+    .hero-section {
+        background-image: url('https://source.unsplash.com/1600x900/?medical,hospital');
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(96, 237, 94, 0.5);
+        z-index: 1;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .hero-section p {
+        font-size: 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        z-index: 2;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .form-group .half-width {
+            width: 100%;
+            float: none;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+</style>
+<title>Healthcare Website</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Digital Doctor</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <h1>Welcome to Our Digital Doctor</h1>
+        <!--p>Your health is our priority. Schedule an appointment today.</p-->
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <h2>Enter Your Health Details</h2>
+        <form id="symptoms-form" action="#" method="post">
+            <div class="form-group">
+                <label for="symptoms">Current Symptoms:</label>
+                <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="genetic-issues">Any Genetical Health Issue:</label>
+                <textarea id="genetic-issues" name="genetic-issues" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medical-history">Medical History:</label>
+                <textarea id="medical-history" name="medical-history" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medicines">Any Medicines Ongoing:</label>
+                <textarea id="medicines" name="medicines" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Details" class="submit-btn">
+            </div>
+        </form>
+
+        
+        <!-- Submission confirmation and additional details section -->
+        <div id="confirmation" class="confirmation-message" style="display: none;">
+            Your details have been submitted.
+        </div>
+
+        <!-- Disease diagnosed, medications recommended, precautions to be taken section -->
+        <div id="your-reports" style="display: none;">
+            <h2>Your Report</h2>
+            
+        <form id="report-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="disease">Disease Diagnosed: </label>
+                    <input type="text" id="disease" name="disease">
+                    
+                </div>
+                 <p> 
+                    <br>
+                    Chances of Desises : {{ predicted_procotions }}
+                    <br>
+                    Accoroding to Model Most Probility of Disease : {{ predicted_disease }}
+                    <br>
+                    Disease Discription: {{ dis_des }}
+                    <br> <br>
+                 
+                 </p>
+                <div class="form-group">
+                         <label for="medications">Medications Recommended: </label>
+                         <textarea id="medications" name="medications" rows="4"></textarea>
+                        
+                </div>
+                 <p>
+                    {{ medications }} </p>
+
+                <div class="form-group">
+                         <label for="precautions">Precautions to Be Taken (Include with Diet):  </label>
+                         <textarea id="precautions" name="precautions" rows="4"></textarea>
+                      
+                </div>
+                <ul>
+                  <ls>{{ my_precautions }} </ls>
+                    <br>
+                    <ls> {{ rec_diet }} </ls>
+                    <br>
+                    <ls> {{ workout }} </ls> 
+                 </ul>
+                    <div class="form-group">
+                        <input type="submit" value="Submit Report" class="submit-btn">
+                    </div>
+                 </form> 
+            </div>
+    </div>
+</main>
+<!--
+<p> 
+    <br>
+   <tt> Disease Diagnosed: </tt>
+
+   <p>
+    Chances of Desises : {{predicted_procotions }}
+    <br>
+    Accoroding to Model Most Probility of Disease :{{predicted_disease}}
+    <br>
+    Disease Discription: {{dis_des}}
+    <br>
+ 
+ </p>
+    <br> <br>
+ <tt> Medications Recommended:</tt>
+
+ <p>
+    {{medications}} </p>
+
+<br> <br>
+
+<tt> Precautions to Be Taken (including Diet): </tt>
+
+<p> {{my_precautions}}
+    <br>
+    {{rec_diet}}
+    <br>
+    {{workout}} </p>
+
+<br> <br>
+</p>
+-->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Healthcare Clinic. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script>
+    const symptomsForm = document.getElementById('symptoms-form');
+    const reportForm = document.getElementById('report-form');
+    const confirmation = document.getElementById('confirmation');
+    const yourReports = document.getElementById('your-reports');
+
+    symptomsForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        confirmation.style.display = 'block';
+        yourReports.style.display = 'block';
+    });
+
+    reportForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Your report has been submitted.');
+        // Additional logic to handle submission of report data goes here
+    });
+</script>
+
+</body>
+</html>
